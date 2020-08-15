@@ -19,10 +19,10 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		final spacing = 50;
+		final spacing = 90;
 		final rightMargin = 70;
-		final titleSize = 24;
-		final labelSize = 16;
+		final titleSize = 64;
+		final labelSize = 36;
 
 		saveState = new FlxSave();
 		saveState.bind('SaveState');
@@ -53,6 +53,10 @@ class PlayState extends FlxState
 		add(currentLocation);
 
 		var readChapter = new FlxButton(2 * rightMargin, 6 * spacing, 'Read Chapter', readChapterPushed);
+		readChapter.height = 200;
+		readChapter.width = 400;
+		readChapter.getHitbox().height = 4 * spacing;
+		readChapter.getHitbox().width = 6 * spacing;
 		add(readChapter);
 	}
 
